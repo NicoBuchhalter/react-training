@@ -1,3 +1,2 @@
-indecision-app/node_modules/
-expensify-app/node_modules/
+**/node_modules/
 **/.DS_Store
