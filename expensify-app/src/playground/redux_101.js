@@ -1,6 +1,4 @@
 import { createStore } from 'redux';
-import { Stream } from 'stream';
-
 
 const incrementCount = ({ incrementBy = 1 }) => ({
     type: 'INCREMENT',
