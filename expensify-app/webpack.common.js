@@ -1,12 +1,15 @@
 const path = require('path');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './src/app.js',
-  output: {
-    path:  path.join(__dirname, 'public'),
-    filename: 'bundle.js'
+  entry: {
+    app: './src/app.js'
   },
-  mode: 'development',
+  output: {
+    filename: 'bundle.js',
+    path: path.join(__dirname, 'public')
+  },
   module: {
     rules: [{
       loader: 'babel-loader',
@@ -17,10 +20,5 @@ module.exports = {
       test: /\.s?css$/,
       use: ['style-loader', 'css-loader', 'sass-loader']
     }]
-  },
-  devtool: 'cheap-module-eval-source-map',
-  devServer: {
-    contentBase: path.join(__dirname, 'public'),
-    historyApiFallback: true
   }
-}
+};
