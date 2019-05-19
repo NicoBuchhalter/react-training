@@ -1,9 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-export default ({ description, amount, createdAt}) => (
+const ExpenseListItem = ({ description, amount, createdAt, id }) => (
   <div>
-    <h3>{description}</h3>
+    <Link to={`/edit/${id}`}>
+      <h3>{description}</h3>
+    </Link>
     <p>Amount: $ {parseFloat(amount / 100)}</p>
     <p>Created at: {createdAt}</p>
   </div>
 ); 
+
+
+export default ExpenseListItem;
